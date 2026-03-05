@@ -1,0 +1,13 @@
+# Render configuration for the OpenTrain coordinator service
+# Documentation: https://render.com/docs/render-yaml
+
+services:
+  - type: web
+    name: opentrain-coordinator
+    env: python
+    repo: "https://github.com/bnayak6833-design/ghuioo"  # update to actual repo if needed
+    branch: main
+    buildCommand: "pip install -r coordinator/requirements.txt"
+    startCommand: "uvicorn coordinator.main:app --host 0.0.0.0 --port $PORT"
+    autoDeploy: true
+    # optional: you can define env vars or secrets via the Render dashboard
