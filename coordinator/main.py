@@ -11,9 +11,13 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .models import create_tables
-from .routes import jobs, tasks, workers
-from .scheduler import build_scheduler
+# from .models import create_tables
+# from .routes import jobs, tasks, workers
+# from .scheduler import build_scheduler
+
+from coordinator.models import create_tables
+from coordinator.routes import jobs, tasks, workers
+from coordinator.scheduler import build_scheduler
 
 # ─── App lifecycle ────────────────────────────────────────────────────────────
 
